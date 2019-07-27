@@ -42,7 +42,7 @@ class Executor extends ServiceBase {
      */
     public var onResult:FutureResult<Dynamic>->Void = function(result) {
         switch(result) {
-            case FAILURE(ex, _): trace(ex);
+            case FAILURE(ex, _): Log.trace(ex);
             default:
         }
     };

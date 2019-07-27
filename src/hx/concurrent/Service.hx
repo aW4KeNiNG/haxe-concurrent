@@ -43,10 +43,10 @@ class ServiceBase implements Service<Int> {
     public var state(default, set):ServiceState = STOPPED;
     function set_state(s:ServiceState) {
         switch(s) {
-            case STARTING: trace('[$this] is starting...');
-            case RUNNING: trace('[$this] is running.');
-            case STOPPING: trace('[$this] is stopping...');
-            case STOPPED: trace('[$this] is stopped.');
+            case STARTING: Log.trace('[$this] is starting...');
+            case RUNNING: Log.trace('[$this] is running.');
+            case STOPPING: Log.trace('[$this] is stopping...');
+            case STOPPED: Log.trace('[$this] is stopped.');
         }
         return state = s;
     }
@@ -54,7 +54,7 @@ class ServiceBase implements Service<Int> {
 
 
     function new() {
-        trace('[$this] instantiated.');
+        Log.trace('[$this] instantiated.');
     }
 
 

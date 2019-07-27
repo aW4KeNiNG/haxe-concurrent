@@ -92,7 +92,7 @@ class ThreadPool extends ServiceBase {
 
                 var context = new ThreadContext(_threadIDs.incrementAndGet());
 
-                trace('[$this] Spawned thread $_spawnedThreadCount/$threadCount with ID ${context.id}.');
+                Log.trace('[$this] Spawned thread $_spawnedThreadCount/$threadCount with ID ${context.id}.');
 
                 while (true) {
                     var task = _workQueue.pop();
@@ -105,13 +105,13 @@ class ThreadPool extends ServiceBase {
                             _workingThreadCount++;
                             task(context);
                         } catch (ex:Dynamic) {
-                            trace(ex);
+                            Log.trace(ex);
                         }
                         _workingThreadCount--;
                     }
                 }
 
-                trace('[$this] Stopped thread with ID ${context.id}.');
+                Log.trace('[$this] Stopped thread with ID ${context.id}.');
 
                 _spawnedThreadCount--;
 

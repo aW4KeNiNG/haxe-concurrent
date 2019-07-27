@@ -102,7 +102,7 @@ class BackgroundProcess {
                 while (true)
                     try stdout.bytes.push(process.stdout.readByte()) catch (ex:haxe.io.Eof) break;
             } catch (ex:Dynamic) {
-                trace(ex);
+                Log.trace(ex);
             }
 
             try exitCode = process.exitCode() catch (ex:Dynamic) { /* ignore */ }
@@ -114,7 +114,7 @@ class BackgroundProcess {
                 while (true)
                     try stderr.bytes.push(process.stderr.readByte()) catch (ex:haxe.io.Eof) break;
             } catch (ex:Dynamic) {
-                trace(ex);
+                Log.trace(ex);
             }
 
             try exitCode = process.exitCode() catch (ex:Dynamic) { /* ignore */ }

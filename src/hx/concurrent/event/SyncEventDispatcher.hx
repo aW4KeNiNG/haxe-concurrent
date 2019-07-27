@@ -24,7 +24,7 @@ class SyncEventDispatcher<EVENT> extends EventListenable.DefaultEventListenable<
                 listener(event);
                 count++;
             } catch (ex:Dynamic) {
-                trace(ex);
+                Log.trace(ex);
             }
         }
         return new ConstantFuture(count);
